@@ -36,6 +36,8 @@ private final class BladesNSView: NSView {
     private var level = -1
     private var tint = NSColor.systemBlue
     private var renderedKey = ""
+    private var lastSpeed = 0.0
+    private var lastAnimated = true
 
     override var isFlipped: Bool { true }
 
@@ -89,16 +91,30 @@ private final class BladesNSView: NSView {
         CATransaction.commit()
     }
 
+    /// Core Animation can drop a layer's animations when the view leaves its window (a menu-bar panel
+    /// being hidden and shown again, a Space change). The speed level did not change, so nothing would
+    /// restart the spin; start over whenever the view is put back in a window.
+    override func viewDidMoveToWindow() {
+        super.viewDidMoveToWindow()
+        guard window != nil else { return }
+        level = -1
+        apply(speed: lastSpeed, tint: tint, animated: lastAnimated)
+    }
+
     private var currentAngle: Double {
         (spin.presentation()?.value(forKeyPath: "transform.rotation.z") as? Double)
             ?? (spin.value(forKeyPath: "transform.rotation.z") as? Double) ?? 0
     }
 
     func apply(speed: Double, tint newTint: NSColor, animated: Bool) {
+        lastSpeed = speed; lastAnimated = animated
         if newTint != tint { tint = newTint; renderBlades(fade: true) }
 
         let newLevel = (!animated || speed < 0.01) ? 0 : max(1, Int((speed * 6).rounded()))
-        guard newLevel != level else { return }
+        // Also restart if the fan should be spinning but its animation is gone. This runs on every
+        // refresh, so a lost animation heals within a second.
+        let spinLost = newLevel > 0 && spin.animation(forKey: "spin") == nil
+        guard newLevel != level || spinLost else { return }
         let wasSpinning = level > 0
         level = newLevel
         let angle = currentAngle
