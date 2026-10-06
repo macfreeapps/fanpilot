@@ -2,7 +2,7 @@
 
 ## 1.0.0
 
-First release.
+First release. Install with `brew install --cask macfreeapps/tap/fanpilot` or from the DMG on the release page; see the [README](README.md).
 
 **Control**
 - Three modes: **Normal** (macOS controls the fans), **Daily** (FanPilot keeps the Mac cool but quiet, and hands the fans back when it cools down), and **Turbo** (both fans at their maximum).
