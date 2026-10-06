@@ -1,0 +1,10 @@
+# Build output
+.build/
+Packages/FanCore/.build/
+DerivedData/
+dist/
+
+# Xcode / macOS
+xcuserdata/
+*.xcuserstate
+.DS_Store

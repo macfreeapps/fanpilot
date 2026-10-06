@@ -1,0 +1,1245 @@
+{
+  "fanless" : false,
+  "fans" : [
+    {
+      "index" : 0,
+      "maximum" : 7826,
+      "minimum" : 2317,
+      "mode" : 0,
+      "modeKey" : "F0Md",
+      "name" : "Left",
+      "rpm" : 2332.14990234375,
+      "target" : 2317
+    },
+    {
+      "index" : 1,
+      "maximum" : 7826,
+      "minimum" : 2317,
+      "mode" : 0,
+      "modeKey" : "F1Md",
+      "name" : "Right",
+      "rpm" : 2493.558349609375,
+      "target" : 2502
+    }
+  ],
+  "ftst" : 0,
+  "hasFtst" : true,
+  "model" : "Mac16,8",
+  "sensors" : [
+    {
+      "key" : "TAOL",
+      "kind" : "Other",
+      "temperature" : 27.2109375
+    },
+    {
+      "key" : "TB0T",
+      "kind" : "Other",
+      "temperature" : 32.79998779296875
+    },
+    {
+      "key" : "TB1T",
+      "kind" : "Other",
+      "temperature" : 32.599990844726562
+    },
+    {
+      "key" : "TB2T",
+      "kind" : "Other",
+      "temperature" : 32.79998779296875
+    },
+    {
+      "key" : "TCHP",
+      "kind" : "Other",
+      "temperature" : 39.833343505859375
+    },
+    {
+      "key" : "TCMb",
+      "kind" : "Other",
+      "temperature" : 54.966297149658203
+    },
+    {
+      "key" : "TCMz",
+      "kind" : "Other",
+      "temperature" : 77.359375
+    },
+    {
+      "key" : "TD00",
+      "kind" : "Other",
+      "temperature" : 27.08604621887207
+    },
+    {
+      "key" : "TD01",
+      "kind" : "Other",
+      "temperature" : 27.34626579284668
+    },
+    {
+      "key" : "TD02",
+      "kind" : "Other",
+      "temperature" : 27.149238586425781
+    },
+    {
+      "key" : "TD03",
+      "kind" : "Other",
+      "temperature" : 27.411922454833984
+    },
+    {
+      "key" : "TD04",
+      "kind" : "Other",
+      "temperature" : 27.148578643798828
+    },
+    {
+      "key" : "TD10",
+      "kind" : "Other",
+      "temperature" : 28.204755783081055
+    },
+    {
+      "key" : "TD11",
+      "kind" : "Other",
+      "temperature" : 28.458547592163086
+    },
+    {
+      "key" : "TD12",
+      "kind" : "Other",
+      "temperature" : 28.237966537475586
+    },
+    {
+      "key" : "TD13",
+      "kind" : "Other",
+      "temperature" : 28.929061889648438
+    },
+    {
+      "key" : "TD14",
+      "kind" : "Other",
+      "temperature" : 28.115514755249023
+    },
+    {
+      "key" : "TD20",
+      "kind" : "Other",
+      "temperature" : 29.320562362670898
+    },
+    {
+      "key" : "TD21",
+      "kind" : "Other",
+      "temperature" : 32.887626647949219
+    },
+    {
+      "key" : "TD22",
+      "kind" : "Other",
+      "temperature" : 31.044475555419922
+    },
+    {
+      "key" : "TD23",
+      "kind" : "Other",
+      "temperature" : 34.591018676757812
+    },
+    {
+      "key" : "TD24",
+      "kind" : "Other",
+      "temperature" : 30.441099166870117
+    },
+    {
+      "key" : "TDBP",
+      "kind" : "Other",
+      "temperature" : 32.375
+    },
+    {
+      "key" : "TDEL",
+      "kind" : "Other",
+      "temperature" : 32.8125
+    },
+    {
+      "key" : "TDER",
+      "kind" : "Other",
+      "temperature" : 33.1875
+    },
+    {
+      "key" : "TDTC",
+      "kind" : "Other",
+      "temperature" : 34.875
+    },
+    {
+      "key" : "TDTP",
+      "kind" : "Other",
+      "temperature" : 34.8125
+    },
+    {
+      "key" : "TDVx",
+      "kind" : "Other",
+      "temperature" : 34.591018676757812
+    },
+    {
+      "key" : "TDeL",
+      "kind" : "Other",
+      "temperature" : 31.25
+    },
+    {
+      "key" : "TDeR",
+      "kind" : "Other",
+      "temperature" : 31.8125
+    },
+    {
+      "key" : "TH0a",
+      "kind" : "Other",
+      "temperature" : 36.59375
+    },
+    {
+      "key" : "TH0b",
+      "kind" : "Other",
+      "temperature" : 36.75
+    },
+    {
+      "key" : "TH0x",
+      "kind" : "Other",
+      "temperature" : 36.859375
+    },
+    {
+      "key" : "TMVR",
+      "kind" : "Other",
+      "temperature" : 41.103271484375
+    },
+    {
+      "key" : "TPD0",
+      "kind" : "Other",
+      "temperature" : 44.12548828125
+    },
+    {
+      "key" : "TPD1",
+      "kind" : "Other",
+      "temperature" : 41.726730346679688
+    },
+    {
+      "key" : "TPD2",
+      "kind" : "Other",
+      "temperature" : 43.165985107421875
+    },
+    {
+      "key" : "TPD3",
+      "kind" : "Other",
+      "temperature" : 42.04656982421875
+    },
+    {
+      "key" : "TPD4",
+      "kind" : "Other",
+      "temperature" : 42.28643798828125
+    },
+    {
+      "key" : "TPD5",
+      "kind" : "Other",
+      "temperature" : 43.405868530273438
+    },
+    {
+      "key" : "TPD6",
+      "kind" : "Other",
+      "temperature" : 43.245941162109375
+    },
+    {
+      "key" : "TPD7",
+      "kind" : "Other",
+      "temperature" : 43.485824584960938
+    },
+    {
+      "key" : "TPD8",
+      "kind" : "Other",
+      "temperature" : 41.566818237304688
+    },
+    {
+      "key" : "TPD9",
+      "kind" : "Other",
+      "temperature" : 42.36639404296875
+    },
+    {
+      "key" : "TPDX",
+      "kind" : "Other",
+      "temperature" : 44.12548828125
+    },
+    {
+      "key" : "TPDa",
+      "kind" : "Other",
+      "temperature" : 41.806686401367188
+    },
+    {
+      "key" : "TPDb",
+      "kind" : "Other",
+      "temperature" : 41.806686401367188
+    },
+    {
+      "key" : "TPDc",
+      "kind" : "Other",
+      "temperature" : 42.20648193359375
+    },
+    {
+      "key" : "TPDd",
+      "kind" : "Other",
+      "temperature" : 41.96661376953125
+    },
+    {
+      "key" : "TPDe",
+      "kind" : "Other",
+      "temperature" : 42.606277465820312
+    },
+    {
+      "key" : "TPDf",
+      "kind" : "Other",
+      "temperature" : 41.806686401367188
+    },
+    {
+      "key" : "TPMP",
+      "kind" : "Other",
+      "temperature" : 43.456527709960938
+    },
+    {
+      "key" : "TPSP",
+      "kind" : "Other",
+      "temperature" : 43.36956787109375
+    },
+    {
+      "key" : "TRD0",
+      "kind" : "Other",
+      "temperature" : 41.806686401367188
+    },
+    {
+      "key" : "TRD1",
+      "kind" : "Other",
+      "temperature" : 41.087066650390625
+    },
+    {
+      "key" : "TRD2",
+      "kind" : "Other",
+      "temperature" : 41.726730346679688
+    },
+    {
+      "key" : "TRD3",
+      "kind" : "Other",
+      "temperature" : 41.406890869140625
+    },
+    {
+      "key" : "TRD4",
+      "kind" : "Other",
+      "temperature" : 42.20648193359375
+    },
+    {
+      "key" : "TRD5",
+      "kind" : "Other",
+      "temperature" : 42.12652587890625
+    },
+    {
+      "key" : "TRD6",
+      "kind" : "Other",
+      "temperature" : 42.686233520507812
+    },
+    {
+      "key" : "TRD7",
+      "kind" : "Other",
+      "temperature" : 42.28643798828125
+    },
+    {
+      "key" : "TRD8",
+      "kind" : "Other",
+      "temperature" : 41.167022705078125
+    },
+    {
+      "key" : "TRD9",
+      "kind" : "Other",
+      "temperature" : 40.687271118164062
+    },
+    {
+      "key" : "TRDX",
+      "kind" : "Other",
+      "temperature" : 42.686233520507812
+    },
+    {
+      "key" : "TRDa",
+      "kind" : "Other",
+      "temperature" : 41.486862182617188
+    },
+    {
+      "key" : "TRDb",
+      "kind" : "Other",
+      "temperature" : 41.646774291992188
+    },
+    {
+      "key" : "TRDc",
+      "kind" : "Other",
+      "temperature" : 41.646774291992188
+    },
+    {
+      "key" : "TRDd",
+      "kind" : "Other",
+      "temperature" : 41.646774291992188
+    },
+    {
+      "key" : "TRDe",
+      "kind" : "Other",
+      "temperature" : 41.326934814453125
+    },
+    {
+      "key" : "TRDf",
+      "kind" : "Other",
+      "temperature" : 41.96661376953125
+    },
+    {
+      "key" : "TS0P",
+      "kind" : "Other",
+      "temperature" : 41.49456787109375
+    },
+    {
+      "key" : "TSCP",
+      "kind" : "Other",
+      "temperature" : 39.175689697265625
+    },
+    {
+      "key" : "TSG1",
+      "kind" : "Other",
+      "temperature" : 43.36956787109375
+    },
+    {
+      "key" : "TSG2",
+      "kind" : "Other",
+      "temperature" : 40.853271484375
+    },
+    {
+      "key" : "TUD0",
+      "kind" : "Other",
+      "temperature" : 41.646774291992188
+    },
+    {
+      "key" : "TUD1",
+      "kind" : "Other",
+      "temperature" : 40.687271118164062
+    },
+    {
+      "key" : "TUD2",
+      "kind" : "Other",
+      "temperature" : 40.607315063476562
+    },
+    {
+      "key" : "TUD3",
+      "kind" : "Other",
+      "temperature" : 40.047592163085938
+    },
+    {
+      "key" : "TUD4",
+      "kind" : "Other",
+      "temperature" : 41.566818237304688
+    },
+    {
+      "key" : "TUD5",
+      "kind" : "Other",
+      "temperature" : 41.886642456054688
+    },
+    {
+      "key" : "TUD6",
+      "kind" : "Other",
+      "temperature" : 41.726730346679688
+    },
+    {
+      "key" : "TUD7",
+      "kind" : "Other",
+      "temperature" : 41.806686401367188
+    },
+    {
+      "key" : "TUD8",
+      "kind" : "Other",
+      "temperature" : 40.4473876953125
+    },
+    {
+      "key" : "TUD9",
+      "kind" : "Other",
+      "temperature" : 40.4473876953125
+    },
+    {
+      "key" : "TUDX",
+      "kind" : "Other",
+      "temperature" : 41.886642456054688
+    },
+    {
+      "key" : "TUDa",
+      "kind" : "Other",
+      "temperature" : 40.4473876953125
+    },
+    {
+      "key" : "TUDb",
+      "kind" : "Other",
+      "temperature" : 40.927139282226562
+    },
+    {
+      "key" : "TUDc",
+      "kind" : "Other",
+      "temperature" : 40.847183227539062
+    },
+    {
+      "key" : "TUDd",
+      "kind" : "Other",
+      "temperature" : 40.687271118164062
+    },
+    {
+      "key" : "TUDe",
+      "kind" : "Other",
+      "temperature" : 41.167022705078125
+    },
+    {
+      "key" : "TUDf",
+      "kind" : "Other",
+      "temperature" : 41.326934814453125
+    },
+    {
+      "key" : "TVA0",
+      "kind" : "Other",
+      "temperature" : 22.978176116943359
+    },
+    {
+      "key" : "TVD0",
+      "kind" : "Other",
+      "temperature" : 54.966297149658203
+    },
+    {
+      "key" : "TVMR",
+      "kind" : "Other",
+      "temperature" : 72.58074951171875
+    },
+    {
+      "key" : "TVMX",
+      "kind" : "Other",
+      "temperature" : 58.037620544433594
+    },
+    {
+      "key" : "TVMr",
+      "kind" : "Other",
+      "temperature" : 73.81292724609375
+    },
+    {
+      "key" : "TVMx",
+      "kind" : "Other",
+      "temperature" : 61
+    },
+    {
+      "key" : "TVS0",
+      "kind" : "Other",
+      "temperature" : 36.073406219482422
+    },
+    {
+      "key" : "TVS1",
+      "kind" : "Other",
+      "temperature" : 35.647850036621094
+    },
+    {
+      "key" : "TVS2",
+      "kind" : "Other",
+      "temperature" : 35.222240447998047
+    },
+    {
+      "key" : "TVS3",
+      "kind" : "Other",
+      "temperature" : 35.604179382324219
+    },
+    {
+      "key" : "TVV0",
+      "kind" : "Other",
+      "temperature" : 43.965579986572266
+    },
+    {
+      "key" : "TVXX",
+      "kind" : "Other",
+      "temperature" : 58.037620544433594
+    },
+    {
+      "key" : "TVXh",
+      "kind" : "Other",
+      "temperature" : 58.037620544433594
+    },
+    {
+      "key" : "TVXm",
+      "kind" : "Other",
+      "temperature" : 58.170078277587891
+    },
+    {
+      "key" : "TVh0",
+      "kind" : "Other",
+      "temperature" : 58.037620544433594
+    },
+    {
+      "key" : "TVh1",
+      "kind" : "Other",
+      "temperature" : 57.451023101806641
+    },
+    {
+      "key" : "TVmS",
+      "kind" : "Other",
+      "temperature" : 61
+    },
+    {
+      "key" : "TVms",
+      "kind" : "Other",
+      "temperature" : 61
+    },
+    {
+      "key" : "TVxx",
+      "kind" : "Other",
+      "temperature" : 58.037620544433594
+    },
+    {
+      "key" : "TW0P",
+      "kind" : "Other",
+      "temperature" : 42.706527709960938
+    },
+    {
+      "key" : "Ta01",
+      "kind" : "Other",
+      "temperature" : 8.3000001907348633
+    },
+    {
+      "key" : "Ta05",
+      "kind" : "Other",
+      "temperature" : 8.3000001907348633
+    },
+    {
+      "key" : "Ta09",
+      "kind" : "Other",
+      "temperature" : 8.3000001907348633
+    },
+    {
+      "key" : "Ta0L",
+      "kind" : "Other",
+      "temperature" : 8.3000001907348633
+    },
+    {
+      "key" : "Ta0P",
+      "kind" : "Other",
+      "temperature" : 8.3000001907348633
+    },
+    {
+      "key" : "Ta0S",
+      "kind" : "Other",
+      "temperature" : 8.3000001907348633
+    },
+    {
+      "key" : "TaLP",
+      "kind" : "Other",
+      "temperature" : 41.652175903320312
+    },
+    {
+      "key" : "TaLT",
+      "kind" : "Other",
+      "temperature" : 36.040542602539062
+    },
+    {
+      "key" : "TaLW",
+      "kind" : "Other",
+      "temperature" : 34.613143920898438
+    },
+    {
+      "key" : "TaRF",
+      "kind" : "Other",
+      "temperature" : 41.25
+    },
+    {
+      "key" : "TaRT",
+      "kind" : "Other",
+      "temperature" : 34.350372314453125
+    },
+    {
+      "key" : "TaRW",
+      "kind" : "Other",
+      "temperature" : 33.91241455078125
+    },
+    {
+      "key" : "TaTP",
+      "kind" : "Other",
+      "temperature" : 42.179351806640625
+    },
+    {
+      "key" : "Te04",
+      "kind" : "CPU",
+      "temperature" : 49.088104248046875
+    },
+    {
+      "key" : "Te05",
+      "kind" : "CPU",
+      "temperature" : 54.888103485107422
+    },
+    {
+      "key" : "Te06",
+      "kind" : "CPU",
+      "temperature" : 59.609375
+    },
+    {
+      "key" : "Te0R",
+      "kind" : "CPU",
+      "temperature" : 47.192348480224609
+    },
+    {
+      "key" : "Te0S",
+      "kind" : "CPU",
+      "temperature" : 52.792346954345703
+    },
+    {
+      "key" : "Te0T",
+      "kind" : "CPU",
+      "temperature" : 55.984375
+    },
+    {
+      "key" : "Tex0",
+      "kind" : "CPU",
+      "temperature" : 53.037246704101562
+    },
+    {
+      "key" : "Tex1",
+      "kind" : "CPU",
+      "temperature" : 59.609375
+    },
+    {
+      "key" : "Tex2",
+      "kind" : "CPU",
+      "temperature" : 51.163505554199219
+    },
+    {
+      "key" : "Tex3",
+      "kind" : "CPU",
+      "temperature" : 55.984375
+    },
+    {
+      "key" : "TfC0",
+      "kind" : "Other",
+      "temperature" : 41.990623474121094
+    },
+    {
+      "key" : "TfC1",
+      "kind" : "Other",
+      "temperature" : 41.9296875
+    },
+    {
+      "key" : "TfC2",
+      "kind" : "Other",
+      "temperature" : 42.506248474121094
+    },
+    {
+      "key" : "TfC3",
+      "kind" : "Other",
+      "temperature" : 42.243751525878906
+    },
+    {
+      "key" : "TfC4",
+      "kind" : "Other",
+      "temperature" : 41.724998474121094
+    },
+    {
+      "key" : "Tg04",
+      "kind" : "GPU",
+      "temperature" : 44.398590087890625
+    },
+    {
+      "key" : "Tg05",
+      "kind" : "GPU",
+      "temperature" : 50.798591613769531
+    },
+    {
+      "key" : "Tg0K",
+      "kind" : "GPU",
+      "temperature" : 44.229167938232422
+    },
+    {
+      "key" : "Tg0L",
+      "kind" : "GPU",
+      "temperature" : 44.229167938232422
+    },
+    {
+      "key" : "Tg0R",
+      "kind" : "GPU",
+      "temperature" : 44.536289215087891
+    },
+    {
+      "key" : "Tg0S",
+      "kind" : "GPU",
+      "temperature" : 50.736289978027344
+    },
+    {
+      "key" : "Tg0X",
+      "kind" : "GPU",
+      "temperature" : 44.519428253173828
+    },
+    {
+      "key" : "Tg0Y",
+      "kind" : "GPU",
+      "temperature" : 50.919429779052734
+    },
+    {
+      "key" : "Tg0d",
+      "kind" : "GPU",
+      "temperature" : 45.033023834228516
+    },
+    {
+      "key" : "Tg0e",
+      "kind" : "GPU",
+      "temperature" : 45.033023834228516
+    },
+    {
+      "key" : "Tg0j",
+      "kind" : "GPU",
+      "temperature" : 45.194557189941406
+    },
+    {
+      "key" : "Tg0k",
+      "kind" : "GPU",
+      "temperature" : 51.594558715820312
+    },
+    {
+      "key" : "Tg0y",
+      "kind" : "GPU",
+      "temperature" : 45.35455322265625
+    },
+    {
+      "key" : "Tg0z",
+      "kind" : "GPU",
+      "temperature" : 51.754554748535156
+    },
+    {
+      "key" : "Tg1E",
+      "kind" : "GPU",
+      "temperature" : 46.438251495361328
+    },
+    {
+      "key" : "Tg1F",
+      "kind" : "GPU",
+      "temperature" : 46.438251495361328
+    },
+    {
+      "key" : "Tg1U",
+      "kind" : "GPU",
+      "temperature" : 45.177284240722656
+    },
+    {
+      "key" : "Tg1V",
+      "kind" : "GPU",
+      "temperature" : 51.577285766601562
+    },
+    {
+      "key" : "Tg1c",
+      "kind" : "GPU",
+      "temperature" : 45.203125
+    },
+    {
+      "key" : "Tg1d",
+      "kind" : "GPU",
+      "temperature" : 45.203125
+    },
+    {
+      "key" : "Tg1k",
+      "kind" : "GPU",
+      "temperature" : 44.677967071533203
+    },
+    {
+      "key" : "Tg1l",
+      "kind" : "GPU",
+      "temperature" : 51.077968597412109
+    },
+    {
+      "key" : "Tp0m",
+      "kind" : "CPU",
+      "temperature" : 5.1999998092651367
+    },
+    {
+      "key" : "Tp0q",
+      "kind" : "CPU",
+      "temperature" : 5.1999998092651367
+    },
+    {
+      "key" : "Tp0v",
+      "kind" : "CPU",
+      "temperature" : 5.1999998092651367
+    },
+    {
+      "key" : "Tp1i",
+      "kind" : "CPU",
+      "temperature" : 48.406723022460938
+    },
+    {
+      "key" : "Tp1j",
+      "kind" : "CPU",
+      "temperature" : 54.606723785400391
+    },
+    {
+      "key" : "Tp1k",
+      "kind" : "CPU",
+      "temperature" : 66.203125
+    },
+    {
+      "key" : "Tp1m",
+      "kind" : "CPU",
+      "temperature" : 49.432693481445312
+    },
+    {
+      "key" : "Tp1n",
+      "kind" : "CPU",
+      "temperature" : 54.932693481445312
+    },
+    {
+      "key" : "Tp1o",
+      "kind" : "CPU",
+      "temperature" : 76.109375
+    },
+    {
+      "key" : "Tp1q",
+      "kind" : "CPU",
+      "temperature" : 46.193595886230469
+    },
+    {
+      "key" : "Tp1t",
+      "kind" : "CPU",
+      "temperature" : 52.393596649169922
+    },
+    {
+      "key" : "Tp1u",
+      "kind" : "CPU",
+      "temperature" : 55.703125
+    },
+    {
+      "key" : "Tp1v",
+      "kind" : "CPU",
+      "temperature" : 47.074081420898438
+    },
+    {
+      "key" : "Tp1w",
+      "kind" : "CPU",
+      "temperature" : 52.574081420898438
+    },
+    {
+      "key" : "Tp1x",
+      "kind" : "CPU",
+      "temperature" : 58.71875
+    },
+    {
+      "key" : "Tp1y",
+      "kind" : "CPU",
+      "temperature" : 49.025188446044922
+    },
+    {
+      "key" : "Tp1z",
+      "kind" : "CPU",
+      "temperature" : 55.225189208984375
+    },
+    {
+      "key" : "Tp20",
+      "kind" : "CPU",
+      "temperature" : 68.53125
+    },
+    {
+      "key" : "Tp21",
+      "kind" : "CPU",
+      "temperature" : 50.238704681396484
+    },
+    {
+      "key" : "Tp22",
+      "kind" : "CPU",
+      "temperature" : 55.738704681396484
+    },
+    {
+      "key" : "Tp23",
+      "kind" : "CPU",
+      "temperature" : 77.59375
+    },
+    {
+      "key" : "Tp24",
+      "kind" : "CPU",
+      "temperature" : 48.292190551757812
+    },
+    {
+      "key" : "Tp25",
+      "kind" : "CPU",
+      "temperature" : 54.492191314697266
+    },
+    {
+      "key" : "Tp26",
+      "kind" : "CPU",
+      "temperature" : 68.078125
+    },
+    {
+      "key" : "Tp27",
+      "kind" : "CPU",
+      "temperature" : 49.162059783935547
+    },
+    {
+      "key" : "Tp28",
+      "kind" : "CPU",
+      "temperature" : 54.662059783935547
+    },
+    {
+      "key" : "Tp29",
+      "kind" : "CPU",
+      "temperature" : 77.1875
+    },
+    {
+      "key" : "Tp2A",
+      "kind" : "CPU",
+      "temperature" : 48.799472808837891
+    },
+    {
+      "key" : "Tp2B",
+      "kind" : "CPU",
+      "temperature" : 54.999473571777344
+    },
+    {
+      "key" : "Tp2C",
+      "kind" : "CPU",
+      "temperature" : 67.1875
+    },
+    {
+      "key" : "Tp2D",
+      "kind" : "CPU",
+      "temperature" : 49.958141326904297
+    },
+    {
+      "key" : "Tp2E",
+      "kind" : "CPU",
+      "temperature" : 55.458141326904297
+    },
+    {
+      "key" : "Tp2G",
+      "kind" : "CPU",
+      "temperature" : 77.828125
+    },
+    {
+      "key" : "Tp2I",
+      "kind" : "CPU",
+      "temperature" : 45.868598937988281
+    },
+    {
+      "key" : "Tp2J",
+      "kind" : "CPU",
+      "temperature" : 52.068599700927734
+    },
+    {
+      "key" : "Tp2K",
+      "kind" : "CPU",
+      "temperature" : 54.390625
+    },
+    {
+      "key" : "Tp2L",
+      "kind" : "CPU",
+      "temperature" : 45.452743530273438
+    },
+    {
+      "key" : "Tp2M",
+      "kind" : "CPU",
+      "temperature" : 50.952743530273438
+    },
+    {
+      "key" : "Tp2N",
+      "kind" : "CPU",
+      "temperature" : 53.96875
+    },
+    {
+      "key" : "Tp2O",
+      "kind" : "CPU",
+      "temperature" : 47.59454345703125
+    },
+    {
+      "key" : "Tp2Q",
+      "kind" : "CPU",
+      "temperature" : 56.794544219970703
+    },
+    {
+      "key" : "Tp2R",
+      "kind" : "CPU",
+      "temperature" : 60.453125
+    },
+    {
+      "key" : "Tp2S",
+      "kind" : "CPU",
+      "temperature" : 47.2152099609375
+    },
+    {
+      "key" : "Tp2T",
+      "kind" : "CPU",
+      "temperature" : 56.415210723876953
+    },
+    {
+      "key" : "Tp2U",
+      "kind" : "CPU",
+      "temperature" : 59.5625
+    },
+    {
+      "key" : "Tp2V",
+      "kind" : "CPU",
+      "temperature" : 47.476531982421875
+    },
+    {
+      "key" : "Tp2W",
+      "kind" : "CPU",
+      "temperature" : 56.676532745361328
+    },
+    {
+      "key" : "Tp2X",
+      "kind" : "CPU",
+      "temperature" : 60.046875
+    },
+    {
+      "key" : "Tpx8",
+      "kind" : "CPU",
+      "temperature" : 53.875736236572266
+    },
+    {
+      "key" : "Tpx9",
+      "kind" : "CPU",
+      "temperature" : 77.828125
+    },
+    {
+      "key" : "TpxA",
+      "kind" : "CPU",
+      "temperature" : 51.555263519287109
+    },
+    {
+      "key" : "TpxB",
+      "kind" : "CPU",
+      "temperature" : 60.453125
+    },
+    {
+      "key" : "TpxC",
+      "kind" : "CPU",
+      "temperature" : 54.105697631835938
+    },
+    {
+      "key" : "TpxD",
+      "kind" : "CPU",
+      "temperature" : 77.59375
+    },
+    {
+      "key" : "Ts00",
+      "kind" : "Other",
+      "temperature" : 46.818080902099609
+    },
+    {
+      "key" : "Ts01",
+      "kind" : "Other",
+      "temperature" : 46.818080902099609
+    },
+    {
+      "key" : "Ts02",
+      "kind" : "Other",
+      "temperature" : 48.234375
+    },
+    {
+      "key" : "Ts04",
+      "kind" : "Other",
+      "temperature" : 46.583705902099609
+    },
+    {
+      "key" : "Ts05",
+      "kind" : "Other",
+      "temperature" : 46.583705902099609
+    },
+    {
+      "key" : "Ts06",
+      "kind" : "Other",
+      "temperature" : 47.265625
+    },
+    {
+      "key" : "Ts08",
+      "kind" : "Other",
+      "temperature" : 46.880580902099609
+    },
+    {
+      "key" : "Ts09",
+      "kind" : "Other",
+      "temperature" : 46.880580902099609
+    },
+    {
+      "key" : "Ts0A",
+      "kind" : "Other",
+      "temperature" : 47.765625
+    },
+    {
+      "key" : "Ts0C",
+      "kind" : "Other",
+      "temperature" : 45.0625
+    },
+    {
+      "key" : "Ts0D",
+      "kind" : "Other",
+      "temperature" : 45.0625
+    },
+    {
+      "key" : "Ts0E",
+      "kind" : "Other",
+      "temperature" : 45.546875
+    },
+    {
+      "key" : "Ts0G",
+      "kind" : "Other",
+      "temperature" : 46.220165252685547
+    },
+    {
+      "key" : "Ts0H",
+      "kind" : "Other",
+      "temperature" : 46.220165252685547
+    },
+    {
+      "key" : "Ts0I",
+      "kind" : "Other",
+      "temperature" : 50.328125
+    },
+    {
+      "key" : "Ts0K",
+      "kind" : "Other",
+      "temperature" : 44.472599029541016
+    },
+    {
+      "key" : "Ts0L",
+      "kind" : "Other",
+      "temperature" : 44.472599029541016
+    },
+    {
+      "key" : "Ts0M",
+      "kind" : "Other",
+      "temperature" : 44.8125
+    },
+    {
+      "key" : "Ts0O",
+      "kind" : "Other",
+      "temperature" : 44.531322479248047
+    },
+    {
+      "key" : "Ts0P",
+      "kind" : "Other",
+      "temperature" : 30.8125
+    },
+    {
+      "key" : "Ts0Q",
+      "kind" : "Other",
+      "temperature" : 44.531322479248047
+    },
+    {
+      "key" : "Ts0R",
+      "kind" : "Other",
+      "temperature" : 44.875
+    },
+    {
+      "key" : "Ts0T",
+      "kind" : "Other",
+      "temperature" : 44.712753295898438
+    },
+    {
+      "key" : "Ts0U",
+      "kind" : "Other",
+      "temperature" : 44.712753295898438
+    },
+    {
+      "key" : "Ts0W",
+      "kind" : "Other",
+      "temperature" : 45.09375
+    },
+    {
+      "key" : "Ts1P",
+      "kind" : "Other",
+      "temperature" : 29.1875
+    },
+    {
+      "key" : "Tsx0",
+      "kind" : "Other",
+      "temperature" : 46.873451232910156
+    },
+    {
+      "key" : "Tsx1",
+      "kind" : "Other",
+      "temperature" : 50.328125
+    }
+  ]
+}
