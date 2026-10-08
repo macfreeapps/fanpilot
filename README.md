@@ -38,6 +38,10 @@ Also: a menu-bar item you can hide, Celsius or Fahrenheit, light and dark appear
 
 Your Mac takes the fans back whenever FanPilot quits, crashes, or stops responding, and after sleep. The helper recovers from its own crashes, goes to full fan speed at 95 °C or under serious thermal pressure, and refuses to take over fans another tool is controlling. Details in [docs/DESIGN.md](docs/DESIGN.md).
 
+## Support FanPilot
+
+FanPilot is free and open source. If you find it useful, [buy me a bánh mì](https://buy-me-a-banhmi.vercel.app/#donate) to support its continued development. Donations use VietQR.
+
 ## Good to know
 
 - **Tested on one Mac** (MacBook Pro, M4 Pro, macOS 27.0). Other chips and macOS versions are untested; please [open an issue](https://github.com/macfreeapps/fanpilot/issues) if it misbehaves.

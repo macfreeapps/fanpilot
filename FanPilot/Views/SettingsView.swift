@@ -468,6 +468,18 @@ private struct AboutTab: View {
                 SettingsRow(symbol: "doc.text.fill", tint: .gray, title: "Free and open source",
                             subtitle: "Released under the MIT License.") { EmptyView() }
             }
+
+            SettingsSection(title: "Support FanPilot", footer: "Donations open in your browser and use VietQR.") {
+                SettingsRow(symbol: "heart.fill", tint: .orange, title: "Buy me a bánh mì",
+                            subtitle: "If FanPilot is useful to you, a small donation helps support its continued development.") {
+                    Link(destination: URL(string: "https://buy-me-a-banhmi.vercel.app/#donate")!) {
+                        Label("Donate", systemImage: "arrow.up.right")
+                    }
+                    .buttonStyle(.bordered)
+                    .controlSize(.small)
+                    .accessibilityLabel("Donate to FanPilot")
+                }
+            }
         }
     }
 }
