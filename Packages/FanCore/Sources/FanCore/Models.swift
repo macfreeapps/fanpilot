@@ -15,6 +15,16 @@ public struct DailyConfig: Codable, Equatable, Sendable {
     public var rampDownRate: Double = 0.03
 
     public init() {}
+    /// Starting profile for a fresh installation. Keep `init()` as the Balanced profile used by
+    /// the explicit “Reset to recommended” action.
+    public static var quieterDefault: DailyConfig {
+        var config = DailyConfig()
+        config.startTemp = 68
+        config.fullTemp = 90
+        config.releaseHysteresis = 8
+        return config.validated()
+    }
+
     public func validated() -> DailyConfig {
         var c = self
         c.startTemp = c.startTemp.isFinite ? min(75, max(45, c.startTemp)) : 60

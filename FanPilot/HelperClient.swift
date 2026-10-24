@@ -16,10 +16,18 @@ import FanCore
     /// True while a mode change is in flight; on M3/M4 the thermal-manager unlock takes 3–6 s.
     var changingMode: Bool { pendingModeChanges > 0 }
     private var pendingModeChanges = 0
+    /// Avoid replacing the saved choice with the helper's initial state before launch restoration.
+    private var didResolveInitialMode = false
     private var connection: NSXPCConnection?
     private var connectionID: UUID?
     private var beat: Task<Void, Never>?
     init() {
+        let defaults = UserDefaults.standard
+        if defaults.object(forKey: "rememberMode") == nil || defaults.bool(forKey: "rememberMode"),
+           let rawMode = defaults.object(forKey: "lastMode") as? Int,
+           let rememberedMode = FanMode(rawValue: rawMode) {
+            mode = rememberedMode
+        }
         connect()
         beat = Task {
             while !Task.isCancelled {
@@ -66,10 +74,11 @@ import FanCore
     private func applyRememberedModeOnce() {
         guard !didApplyRememberedMode else { return }
         didApplyRememberedMode = true
+        didResolveInitialMode = true
         let defaults = UserDefaults.standard
         guard defaults.object(forKey: "rememberMode") == nil || defaults.bool(forKey: "rememberMode"),
               let remembered = FanMode(rawValue: defaults.integer(forKey: "lastMode")), remembered != .normal else { return }
-        let config = defaults.data(forKey: "dailyConfig").flatMap { try? JSONDecoder().decode(DailyConfig.self, from: $0) } ?? DailyConfig()
+        let config = defaults.data(forKey: "dailyConfig").flatMap { try? JSONDecoder().decode(DailyConfig.self, from: $0) } ?? DailyConfig.quieterDefault
         mode = remembered
         setMode(remembered, config: config)
     }
@@ -111,7 +120,7 @@ import FanCore
                 // Show what the helper is actually doing: after a helper restart, crash recovery,
                 // or a refused request (another fan tool in control) the selection must not claim
                 // a mode that is not active. Skip while a change is in flight.
-                if self.pendingModeChanges == 0, self.mode != value.mode { self.mode = value.mode }
+                if self.didResolveInitialMode, self.pendingModeChanges == 0, self.mode != value.mode { self.mode = value.mode }
             }
         }
     }

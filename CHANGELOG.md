@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Fresh installs start in **Daily · Quieter**; existing installations keep their saved mode and Daily settings.
+- Restore the last selected mode and Daily style when FanPilot opens, when **Remember my last mode** is enabled.
+
 ## 1.0.0
 
 First release. Install with `brew install --cask macfreeapps/tap/fanpilot` or from the DMG on the release page; see the [README](README.md).

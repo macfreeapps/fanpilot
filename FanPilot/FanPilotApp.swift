@@ -12,18 +12,27 @@ import FanCore
     @AppStorage("showMenuBarItem") private var showMenuBarItem = true
     @AppStorage(TemperatureUnit.storageKey) private var unitRaw = TemperatureUnit.regionDefault.rawValue
     init() {
+        let defaults = UserDefaults.standard
+        // Determine first-run onboarding before installing the new defaults below.
+        let hasPriorPreferences = defaults.object(forKey: "lastMode") != nil || defaults.object(forKey: "dailyConfig") != nil
+        let decodedConfig = defaults.data(forKey: "dailyConfig").flatMap { try? JSONDecoder().decode(DailyConfig.self, from: $0) }
+        let savedConfig = decodedConfig?.validated() ?? DailyConfig.quieterDefault
+        if decodedConfig == nil, let data = try? JSONEncoder().encode(savedConfig) {
+            defaults.set(data, forKey: "dailyConfig")
+        }
+        if defaults.object(forKey: "lastMode") == nil {
+            defaults.set(FanMode.daily.rawValue, forKey: "lastMode")
+        }
+        let shouldRemember = defaults.object(forKey: "rememberMode") == nil || defaults.bool(forKey: "rememberMode")
+        if !shouldRemember { defaults.set(FanMode.normal.rawValue, forKey: "lastMode") }
+
         let monitor = Monitor()
         let helper = HelperClient()
         _monitor = State(initialValue: monitor)
         _helper = State(initialValue: helper)
-        let savedConfig = UserDefaults.standard.data(forKey: "dailyConfig").flatMap { try? JSONDecoder().decode(DailyConfig.self, from: $0) } ?? DailyConfig()
         _config = State(initialValue: savedConfig.validated())
         AppLifecycle.helper = helper
         monitor.start()
-        let defaults = UserDefaults.standard
-        let shouldRemember = defaults.object(forKey: "rememberMode") == nil || defaults.bool(forKey: "rememberMode")
-        if !shouldRemember { defaults.set(FanMode.normal.rawValue, forKey: "lastMode") }
-        let hasPriorPreferences = defaults.object(forKey: "lastMode") != nil || defaults.object(forKey: "dailyConfig") != nil
         _showingOnboarding = State(initialValue: !defaults.bool(forKey: "hasSeenOnboarding") && !hasPriorPreferences)
     }
     var body: some Scene {
