@@ -40,10 +40,10 @@ final class FanCoreTests: XCTestCase {
         XCTAssertEqual(FanCurve.target(temperature: 85, minimum: 1200, maximum: 6000, config: DailyConfig()), 6000)
     }
 
-    func testRampDownIsLimitedButRiseIsImmediate() {
+    func testFanSpeedRampIsLimitedInBothDirections() {
         var c = DailyConfig(); c.rampDownRate = 0.03
         XCTAssertEqual(FanCurve.nextTarget(curveTarget: 1000, previous: 4000, minimum: 1000, maximum: 5000, config: c), 3880)
-        XCTAssertEqual(FanCurve.nextTarget(curveTarget: 4500, previous: 2000, minimum: 1000, maximum: 5000, config: c), 4500)
+        XCTAssertEqual(FanCurve.nextTarget(curveTarget: 4500, previous: 2000, minimum: 1000, maximum: 5000, config: c), 2120)
     }
 
     func testSensorValidityAndFanWriteAllowList() {
@@ -178,13 +178,22 @@ final class FanCoreTests: XCTestCase {
         XCTAssertTrue(released, "Sustained cool readings should eventually release control")
     }
 
-    func testDailyEngineLimitsRampDownAndForcesEmergencyMaximum() {
+    func testDailyEngineRampsGraduallyAndForcesEmergencyMaximum() {
         var config = DailyConfig(); config.startTemp = 50; config.engageDelay = 1; config.releaseDelay = 120
         let fans = [DailyFanSample(id: 0, rpm: 2000, minimum: 1000, maximum: 5000)]
         var engine = DailyCurveEngine(config: config)
-        guard case .engage = engine.tick(temperature: 70, fans: fans) else { return XCTFail("Expected engage") }
-        guard case .update(let lowered) = engine.tick(temperature: 49, fans: fans) else { return XCTFail("Expected target update") }
-        XCTAssertEqual(lowered[0].rpm, 3165, accuracy: 1)
+        guard case .engage(let engaged) = engine.tick(temperature: 70, fans: fans) else { return XCTFail("Expected engage") }
+        XCTAssertEqual(engaged[0].rpm, 2120, accuracy: 1, "Engagement should ramp toward the curve")
+        var previous = engaged[0].rpm
+        var sawRampDown = false
+        for _ in 0..<60 {
+            guard case .update(let targets) = engine.tick(temperature: 49, fans: fans) else { return XCTFail("Expected target update") }
+            let target = targets[0].rpm
+            XCTAssertLessThanOrEqual(abs(target - previous), 120.001, "A one-second tick must obey the configured ramp limit")
+            if target < previous { sawRampDown = true }
+            previous = target
+        }
+        XCTAssertTrue(sawRampDown, "Cooling below the curve should gradually lower the fan target")
         XCTAssertEqual(engine.tick(temperature: 95, fans: fans), .emergency([DailyTarget(fanID: 0, rpm: 5000)]))
     }
 
@@ -205,18 +214,27 @@ final class FanCoreTests: XCTestCase {
         XCTAssertEqual(engine.tick(temperature: nil, thermalCritical: true, fans: fans), .emergency([DailyTarget(fanID: 0, rpm: 5000)]))
     }
 
-    func testDailyEngineHoldsMaximumUnderSustainedNinetyDegrees() {
+    func testDailyEngineGraduallyReachesAndHoldsMaximumUnderSustainedHeat() {
         let fans = [DailyFanSample(id: 0, rpm: 1500, minimum: 1200, maximum: 6000), DailyFanSample(id: 1, rpm: 1500, minimum: 1200, maximum: 6000)]
         var engine = DailyCurveEngine()
         var commands: [DailyEngineCommand] = []
         for _ in 0..<300 { commands.append(engine.tick(temperature: 90, fans: fans)) }
         XCTAssertEqual(commands[0], .none)
         guard case .engage(let first) = commands[2] else { return XCTFail("Expected engage after the 3 s engage delay") }
-        XCTAssertEqual(first.map(\.rpm), [6000, 6000])
+        XCTAssertEqual(first.map(\.rpm), [1644, 1644], "Daily should ramp up from the current fan speed")
+        var previous = first.map(\.rpm)
+        var reachedMaximum = false
         for command in commands.dropFirst(3) {
             guard case .update(let targets) = command else { return XCTFail("Sustained heat must never release or go idle") }
-            XCTAssertEqual(targets.map(\.rpm), [6000, 6000])
+            for index in targets.indices {
+                XCTAssertGreaterThanOrEqual(targets[index].rpm, previous[index], "Sustained heat should not lower the target")
+                XCTAssertLessThanOrEqual(targets[index].rpm - previous[index], 144.001, "Daily should ramp up gradually")
+            }
+            previous = targets.map(\.rpm)
+            if targets.allSatisfy({ $0.rpm == 6000 }) { reachedMaximum = true }
         }
+        XCTAssertTrue(reachedMaximum, "Sustained heat at the configured full-speed threshold should reach maximum")
+        XCTAssertEqual(previous, [6000, 6000], "Once at the curve target, Daily should hold that speed")
         XCTAssertEqual(engine.phase, .manual)
     }
 

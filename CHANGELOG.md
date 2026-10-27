@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Daily mode now ramps fan targets gradually in both directions; maximum speed remains available for emergency thermal protection.
 - Fresh installs start in **Daily · Quieter**; existing installations keep their saved mode and Daily settings.
 - Restore the last selected mode and Daily style when FanPilot opens, when **Remember my last mode** is enabled.
 

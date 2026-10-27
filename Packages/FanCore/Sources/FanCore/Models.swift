@@ -80,8 +80,12 @@ public enum FanCurve {
     }
 
     public static func nextTarget(curveTarget: Double, previous: Double, minimum: Double, maximum: Double, config raw: DailyConfig) -> Double {
-        let maxDrop = (maximum - minimum) * raw.validated().rampDownRate
-        return min(maximum, max(minimum, max(curveTarget, previous - maxDrop)))
+        // Bound changes in both directions so a temperature spike cannot command an abrupt jump
+        // to full speed. The emergency path in DailyCurveEngine deliberately bypasses this.
+        let config = raw.validated()
+        let maxStep = (maximum - minimum) * config.rampDownRate
+        let current = min(maximum, max(minimum, previous))
+        return min(maximum, max(minimum, min(current + maxStep, max(current - maxStep, curveTarget))))
     }
 
     public static func filtered(previous: Double, sample: Double) -> Double {

@@ -83,7 +83,11 @@ public struct DailyCurveEngine: Sendable {
             phase = .manual; secondsBelowRelease = 0
             let targets = fans.map { fan in
                 let curve = FanCurve.target(temperature: filtered, minimum: fan.minimum, maximum: fan.maximum, config: config)
-                return DailyTarget(fanID: fan.id, rpm: max(curve, fan.rpm))
+                // Take over without lowering the current speed, but ramp up toward the curve
+                // instead of jumping to it in one write.
+                let target = FanCurve.nextTarget(curveTarget: max(curve, fan.rpm), previous: fan.rpm,
+                                                 minimum: fan.minimum, maximum: fan.maximum, config: config)
+                return DailyTarget(fanID: fan.id, rpm: target)
             }
             previousTargets = Dictionary(uniqueKeysWithValues: targets.map { ($0.fanID, $0.rpm) })
             return .engage(targets)

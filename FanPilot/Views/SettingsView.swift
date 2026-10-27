@@ -274,7 +274,7 @@ private struct DailyModeTab: View {
                         tempSlider("Hand back to macOS when this much cooler", celsius: $config.releaseHysteresis, range: 4...15, isDifference: true)
                         stepperRow("React after this long above the start temperature", value: $config.engageDelay, range: 1...10, step: 1)
                         stepperRow("Hand back after this long cooler", value: $config.releaseDelay, range: 10...120, step: 5)
-                        percentSlider("Slow down by", value: $config.rampDownRate, range: 0.01...0.10)
+                        percentSlider("Limit fan speed changes to", value: $config.rampDownRate, range: 0.01...0.10)
                         HStack {
                             Spacer()
                             Button("Reset to recommended") { withAnimation(.friendly) { config = DailyConfig() } }
